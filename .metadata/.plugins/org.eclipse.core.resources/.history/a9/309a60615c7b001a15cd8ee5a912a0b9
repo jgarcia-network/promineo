@@ -1,0 +1,12 @@
+package week1_topic1;
+
+public class Application {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	string myName = "Jesus";
+	
+	System.out.println(myName);
+	}
+
+}

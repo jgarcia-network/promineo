@@ -1,0 +1,25 @@
+package week1_topic1;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double itemPrice = 3.50;
+		int walletAmount = 5;
+		int friends = 10;
+		int age = 37;
+		String firstName = "Jesus";
+		String lastName = "Garcia";
+		char initial = 'L';
+		
+		double newMoney = walletAmount - itemPrice;
+		int numberFriends = age + friends;
+		int fullName = firstName + initial + lastName;
+	
+		System.out.println("Money left in my wallet is " + newMoney);
+		System.out.println("Number of friends i've made each year " + numberFriends);
+		System.out.println("My full name is " + fullName);
+		
+	}
+
+}
