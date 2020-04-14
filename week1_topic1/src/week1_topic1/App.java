@@ -7,7 +7,7 @@ public class App {
 		double itemPrice = 3.50;
 		double walletAmount = 5;
 		int friends = 10;
-		int age = 37;
+		int age = 0;
 		String firstName = "Jesus";
 		String lastName = "Garcia";
 		char initial = 'L';
