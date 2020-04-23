@@ -1,4 +1,4 @@
-package week1_topic2;
+package week2_topic2;
 
 public class Loops {
 
