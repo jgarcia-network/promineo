@@ -45,7 +45,7 @@ public class Collections {
 	
 		//6.
 		for (Integer key : employeeMap.keySet()){
-		System.out.println(key + " " + employeeMap.get(key));
+		//System.out.println(key + " " + employeeMap.get(key));
 		}
 		
 		//7.
@@ -57,7 +57,7 @@ public class Collections {
 		}
 		
 		//9.
-		System.out.println(idsBuilder.toString());
+		//System.out.println(idsBuilder.toString());
 		
 		//10.
 		StringBuilder namesBuilder = new StringBuilder();
@@ -68,7 +68,7 @@ public class Collections {
 		}
 		
 		//12.
-		System.out.println(namesBuilder.toString());
+		//System.out.println(namesBuilder.toString());
 	
 	}
 }
