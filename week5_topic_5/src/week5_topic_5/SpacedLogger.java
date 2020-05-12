@@ -1,4 +1,5 @@
 package week5_topic_5;
+
 public class SpacedLogger implements Logger{
 
 	@Override
