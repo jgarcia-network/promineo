@@ -1,7 +1,7 @@
 package week4_topic_4;
 
 import java.util.ArrayList;
-import java.util.Collection;
+//import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -44,9 +44,9 @@ public class Collections {
 		}
 	
 		//6.
-		for (Integer key : employeeMap.keySet()){
+		//for (Integer key : employeeMap.keySet()){
 		//System.out.println(key + " " + employeeMap.get(key));
-		}
+		//}
 		
 		//7.
 		StringBuilder idsBuilder = new StringBuilder();

@@ -9,7 +9,7 @@ public class SpacedLogger implements Logger{
 		for(int i=0; i<log.length(); i++){
 			logResult.append(log.charAt(i) + " ");
 		}
-		System.out.println(logResult);
+		//System.out.println(logResult);
 	}
 
 	@Override
@@ -19,7 +19,7 @@ public class SpacedLogger implements Logger{
 		for(int i=0; i<error.length(); i++){
 			errorResult.append(error.charAt(i) + " ");
 		}
-		System.out.println("ERROR: " + errorResult);		
+		//System.out.println("ERROR: " + errorResult);		
 	}
 
 }
