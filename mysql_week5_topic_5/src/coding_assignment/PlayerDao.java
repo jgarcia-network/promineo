@@ -12,7 +12,7 @@ public class PlayerDao {
 	private Connection connection;
 	private final String GET_ROSTER_QUERY = "SELECT * FROM roster";
 	private final String CREATE_PLAYER_QUERY = "INSERT INTO roster(name, position) VALUES(?, ?)";
-	private final String EDIT_PLAYER_QUERY = "UPDATE roster SET name = (?), position = (?) WHERE id = (?)";
+	private final String EDIT_PLAYER_QUERY = "UPDATE roster SET name = ?, position = ? WHERE id = ?";
 	private final String DELETE_PLAYER_QUERY = "DELETE FROM roster WHERE id = (?)";
 	
 	

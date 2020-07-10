@@ -14,7 +14,7 @@ public class DBConnection {
 	private static DBConnection instance;
 	
 	private DBConnection(Connection connection) {
-		this.connection = connection;
+		DBConnection.connection = connection;
 	}
 	
 	public static Connection getConnection() {
