@@ -3,6 +3,7 @@ package com.promineotech.inventory.entity;
 import java.time.LocalDate;
 import java.util.Set;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,7 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.promineotech.inventory.util.OrderStatus;
 
+@Entity
 public class Order {
 
 	private Long id;
