@@ -40,11 +40,11 @@ public class OrderService {
 			return repo.save(order);
 		} catch (Exception e) {
 			logger.error("Exception occurred while trying to create new order for customer: " + customerId, e);
-			throw new Exception ("Unable to update order.");
+			throw e;
 		}
 	}
 	
-	private Order cancelOrder(Long orderId) throws Exception {
+	public Order cancelOrder(Long orderId) throws Exception {
 		try {
 			Order order = repo.findOne(orderId);
 			order.setStatus(OrderStatus.CANCELED);
@@ -55,7 +55,7 @@ public class OrderService {
 		}
 	}
 	
-	private Order completeOrder(Long orderId) throws Exception {
+	public Order completeOrder(Long orderId) throws Exception {
 		try {
 			Order order = repo.findOne(orderId);
 			order.setStatus(OrderStatus.DELIVERED);
