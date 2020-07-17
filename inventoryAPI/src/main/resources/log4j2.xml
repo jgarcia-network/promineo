@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="NARN" monitorInterval="30"› 
+	<Properties>
+		<Property name="LOG PATTERN"› HH:mm:ss.S551 %5p ${hostName} [%15.15t] %-40.40c{1.} : %M%n%gx </Property>
+	</Properties>
+	<Appenders>
+		<Console name="ConsoLeAppender" target="SYSTEM OUT" follow="true>
+			<PatternLayout pattern="$fLOG PATTERN)" />
+		</Console>
+		<RollingFile name="FiLeAppender" fileName="Logs/Log4j2-exampLe.Log" filePattern="Logs/Log4j2-example-Zdfyyyy-MN-ddl-Ai.Log"› 
+			<PatternLayout>
+				<Pattern4fLOG_PATTERNWPattern>
+				</Pattern Layout>
+				<Policies>
+					<Size6asedTriggeringPolicy size="18M8" I>
+					</Policies>
+					<DefaultRolloverStategy max="/0" />
+				</RollingFile>
+			</Appenders>
+			<Loggers>
+				<Logger name="com.exampLe.Log4j2exampLe" level="debug" additivity="faLse>
+					<AppenderRef ref="ConsoLeAppender" I>
+					</Logger>
+					<Root level="infe>
+						<AppenderRef ref="ConsoLeAppender" I>
+							<AppenderRef ref="FiLeAppender" />
+						</Root>
+					</Loggers>
+				</Configuration> 
