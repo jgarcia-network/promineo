@@ -35,7 +35,7 @@ public class CustomerController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Object> createCustomer(@RequestBody Customer customer) {
-		return new ResponseEntity<Object>(service.getCustomers(), HttpStatus.CREATED);
+		return new ResponseEntity<Object>(service.createCustomer(customer), HttpStatus.CREATED);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
