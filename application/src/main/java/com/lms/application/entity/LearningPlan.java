@@ -1,63 +1,45 @@
-package com.promineotech.socialMediaApi.entity;
+package com.lms.application.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Comment {
-
+public class LearningPlan {
+	
 	private Long id;
-	private String content;
-	private Date date;
+	private LocalDate dateAdded;
 	private User user;
-
-	@JsonIgnore
-	private Post post;
-
+	private Set<Course> courses;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getContent() {
-		return content;
+	public LocalDate getDateAdded() {
+		return dateAdded;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setDataAdded(LocalDate dataAdded) {
+		this.dateAdded = dataAdded;
 	}
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	
-	@ManyToOne
-	@JoinColumn(name = "postId")
-	public Post getPost() {
-		return post;
-	}
-
-	public void setPost(Post post) {
-		this.post = post;
-	}
-	
 	@ManyToOne
 	@JoinColumn(name = "userId")
 	public User getUser() {
@@ -67,4 +49,14 @@ public class Comment {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	@ManyToMany(mappedBy = "plan")
+	public Set<Course> getCourses() {
+		return courses;
+	}
+	
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
+	}
+
 }

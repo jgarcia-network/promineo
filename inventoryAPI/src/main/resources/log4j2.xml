@@ -13,7 +13,7 @@
 			<PatternLayout pattern="${LOG_PATTERN}" />
 	</Console>
 		<RollingFile name="FileAppender"
-			fileName="logs/log4j2-exampLe.log"
+			fileName="logs/log4j2-example.log"
 			filePattern="logs/log4j2-example-%d{yyyy-MM-dd}-%i.log">			
 			<PatternLayout>
 				<Pattern>${LOG_PATTERN}</Pattern>
@@ -25,7 +25,7 @@
 		</RollingFile>
 	</Appenders>
 	<Loggers>
-		<Logger name="com.exampLe.log4j2exampLe" level="debug"
+		<Logger name="com.example.log4j2example" level="debug"
 			additivity="false">
 			<AppenderRef ref="ConsoleAppender"/>
 		</Logger>
