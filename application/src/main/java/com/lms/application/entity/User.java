@@ -1,12 +1,10 @@
 package com.lms.application.entity;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,7 +18,7 @@ public class User {
 	private String lastName;
 	private String email;
 	private String password;
-	private Set<LearningPlan> plans;
+	private LearningPlan plan;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -66,13 +64,13 @@ public class User {
 		this.password = password;
 	}
 	
-	@OneToMany(mappedBy = "user")
-	public Set<LearningPlan> getPlan() {
-		return plans;
+	@OneToOne(mappedBy = "user")
+	public LearningPlan getPlan() {
+		return plan;
 	}
 
-	public void setPlan(Set<LearningPlan> plan) {
-		this.plans = plan;
+	public void setPlan(LearningPlan plan) {
+		this.plan = plan;
 	}
 
 	public String getUsername() {
@@ -81,14 +79,6 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
-
-	public Set<LearningPlan> getPlans() {
-		return plans;
-	}
-
-	public void setPlans(Set<LearningPlan> plans) {
-		this.plans = plans;
 	}
 
 }

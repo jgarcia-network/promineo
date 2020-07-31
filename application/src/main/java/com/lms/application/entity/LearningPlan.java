@@ -9,10 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class LearningPlan {
@@ -36,11 +33,11 @@ public class LearningPlan {
 		return dateAdded;
 	}
 
-	public void setDataAdded(LocalDate dataAdded) {
-		this.dateAdded = dataAdded;
+	public void setDateAdded(LocalDate dateAdded) {
+		this.dateAdded = dateAdded;
 	}
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "userId")
 	public User getUser() {
 		return user;

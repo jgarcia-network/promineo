@@ -31,6 +31,10 @@ public class LearningPlanService {
 	@Autowired
 	private CourseRepository courseRepo;
 	
+	public Iterable<LearningPlan> getPlan(){
+		return repo.findAll();
+	}
+	
 	public LearningPlan submitNewLearningPlan(Set <Long> courseIds, Long userId) throws Exception {
 		try {
 			User currentUser = userRepo.findById(userId).orElse(null);
@@ -49,7 +53,7 @@ public class LearningPlanService {
 		LearningPlan plan = new LearningPlan();
 		Course course = new Course();
 		plan.setCourses(convertToCourseSet(courseRepo.findAllById(courseIds)));
-		plan.setDataAdded(LocalDate.now());
+		plan.setDateAdded(LocalDate.now());
 		plan.setUser(user);
 		course.setStatus(CourseStatus.IN_PROGRESS);
 		addCourseToPlan(plan);
@@ -60,7 +64,7 @@ public class LearningPlanService {
 		LearningPlan plan = new LearningPlan();
 		Course course = new Course();
 		plan.setCourses(convertToCourseSet(courseRepo.findAllById(courseIds)));
-		plan.setDataAdded(LocalDate.now());
+		plan.setDateAdded(LocalDate.now());
 		plan.setUser(user);		
 		course.setStatus(CourseStatus.COMPLETED);
 		addCourseToPlan(plan);
@@ -77,7 +81,7 @@ public class LearningPlanService {
 	private LearningPlan createPlan(Set <Long> courseIds, User user) {
 		LearningPlan plan = new LearningPlan();
 		plan.setCourses(convertToCourseSet(courseRepo.findAllById(courseIds)));
-		plan.setDataAdded(LocalDate.now());
+		plan.setDateAdded(LocalDate.now());
 		plan.setUser(user);
 		Set<Course> courses = plan.getCourses();
 		for (Course course : courses) {

@@ -20,6 +20,11 @@ public class LearningPlanController {
 		@Autowired
 		private LearningPlanService service;
 		
+		@RequestMapping(method=RequestMethod.GET)
+		public ResponseEntity<Object> getPlan(){
+			return new ResponseEntity<Object>(service.getPlan(), HttpStatus.OK);
+		}
+		
 		@RequestMapping(method=RequestMethod.POST)
 		public ResponseEntity<Object> createPlan(@RequestBody Set <Long> courseIds, @PathVariable Long id) {
 			try {
@@ -27,6 +32,5 @@ public class LearningPlanController {
 			} catch (Exception e) {
 				return new ResponseEntity<Object>(e, HttpStatus.BAD_REQUEST);
 			}
-		}
-		
+		}		
 }

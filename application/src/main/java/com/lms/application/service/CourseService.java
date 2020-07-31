@@ -34,7 +34,7 @@ public class CourseService {
 			Course oldCourse = repo.findById(course.getId()).orElse(null);
 			if (oldCourse != null) {
 			oldCourse.setCredits(course.getCredits());
-			oldCourse.setCourseTitle(course.getCourseTitle());
+			oldCourse.setTitle(course.getTitle());
 			return repo.save(oldCourse);
 			}
 			return oldCourse;

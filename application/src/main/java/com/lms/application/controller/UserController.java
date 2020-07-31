@@ -19,7 +19,11 @@ public class UserController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST) 
 	 public ResponseEntity<Object> register(@RequestBody User user){
+		try {
 		return new ResponseEntity<Object>(service.createUser(user), HttpStatus.CREATED);
+		} catch (Exception e) {
+		return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)

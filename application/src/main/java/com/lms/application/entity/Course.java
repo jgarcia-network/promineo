@@ -35,12 +35,12 @@ public class Course {
 		this.id = id;
 	}
 	
-	public String getCourseTitle() {
+	public String getTitle() {
 		return title;
 	}
 	
-	public void setCourseTitle(String courseTitle) {
-		this.title = courseTitle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
 	public String getCredits() {
